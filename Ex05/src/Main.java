@@ -43,7 +43,7 @@ public class Main {
 
         } while (escolha.equals("1") || escolha.equals("SIM"));
 
-        Map<String, List<Funcionario>> funcionariosAgrupados = funcionarios.stream().filter(funcionario -> funcionario.getSalario() >= 2000 && funcionario.getSalario() <= 5000).collect(Collectors.groupingBy(Funcionario::getDepartamento));
+        Map<String, List<Funcionario>> funcionariosAgrupados = funcionarios.stream().filter(funcionario -> funcionario.getSalario() > 2000 && funcionario.getSalario() < 5000).collect(Collectors.groupingBy(Funcionario::getDepartamento));
 
         funcionariosAgrupados.forEach((depart, lista) -> {
             System.out.println("\nDepartamento: " + depart);
